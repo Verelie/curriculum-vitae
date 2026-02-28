@@ -1,6 +1,6 @@
 #let global-theme = state(
   "theme",
-  ("accent-color": black)
+  ("accent-color": black),
 )
 // rgb(250, 0, 0)
 
@@ -43,15 +43,14 @@
 #let entry(left-text, right-text, description: none) = {
   grid(
     column-gutter: 0pt,
-    row-gutter: 0.6em,
+    row-gutter: 1em,
     columns: (1fr, auto),
-    align(left, [#left-text]),
-    align(right, [#right-text]),
+    align(left, [#left-text]), align(right, [#right-text]),
     if description != none {
       grid.cell(
         colspan: 2,
-        [#description]
+        [#description],
       )
-    }
+    },
   )
 }
