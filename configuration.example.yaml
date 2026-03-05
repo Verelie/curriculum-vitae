@@ -1,2 +1,40 @@
 # create a "configuration.yaml" file and paste the contents of this example over there
 
+contacts:
+  name: Test
+  address: Test
+  city: Test
+  zip: Test
+  phone: Test
+  email: Test
+  dateofbirth: Test
+  nationality: Test
+
+skills:
+  - name: Test
+    items:
+      - Test
+      - Test
+  - name: Test2
+    items:
+      - Test2
+      - Test2
+
+jobs:
+  - position: Test
+    company:
+      name: Test
+      link: Test.com
+    description:
+      - Test Test Test
+      - Test Test
+    duration: "2022 - 2025"
+
+education:
+  - place:
+      name: Test
+      link: Test.com
+    description:
+      - Test Test Test
+      - Test Test
+    duration: "2022 - 2025"
