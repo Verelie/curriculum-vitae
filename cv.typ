@@ -25,7 +25,7 @@
   for job in config.jobs {
     entry(
       [
-        *#{ job.company }*\
+        *#{ job.company }* (#{ job.role })\
         #list(..job.description)
       ],
       [_#{ job.duration }_],

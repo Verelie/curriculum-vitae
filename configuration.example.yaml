@@ -17,7 +17,7 @@ skills:
       - Test
 
 jobs:
-  - position: Test
+  - role: Test
     company: Test
     description:
       - Test Test Test
