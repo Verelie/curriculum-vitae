@@ -15,26 +15,16 @@ skills:
     items:
       - Test
       - Test
-  - name: Test2
-    items:
-      - Test2
-      - Test2
 
 jobs:
   - position: Test
-    company:
-      name: Test
-      link: Test.com
+    company: Test
     description:
       - Test Test Test
       - Test Test
     duration: "2022 - 2025"
 
 education:
-  - place:
-      name: Test
-      link: Test.com
-    description:
-      - Test Test Test
-      - Test Test
+  - place: Test
+    description: Test
     duration: "2022 - 2025"
