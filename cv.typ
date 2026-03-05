@@ -19,41 +19,44 @@
   )
 ]
 
-// Experience
-#section("Experience")
+// Berufserfahrung
+#section("Berufserfahrung")
 #{
-  for place in config.jobs {
+  for job in config.jobs {
     entry(
       [
-        *#{ place.company.name }*\
-        #list(..place.description)
+        *#{ job.company }*\
+        #list(..job.description)
       ],
-      [_#{ place.duration }_],
+      [_#{ job.duration }_],
     )
   }
 }
 
-// Education
-#section("Education")
+// Bildungsweg
+#section("Bildungsweg")
 #{
   for education in config.education {
     entry(
       [
-        #if 1 < 2 {}*#{ education.place.name }*\
-        #list(..education.description)
+        #if education.description != "" and education.description != none [
+          *#{ education.place }* (#education.description)\
+        ] else [
+          *#{ education.place }*
+        ]
       ],
       [_#{ education.duration }_],
     )
   }
 }
 
-// Skills
-#section("Skills")
+// Kompetenzen
+#section("Kompetenzen")
 #table(
   align: left,
   columns: (auto, 1fr),
   stroke: none,
-  row-gutter: 0pt,
+  row-gutter: 10pt,
   column-gutter: 5pt,
   inset: (left: 0pt, top: 2pt),
   ..for skill in config.skills {
