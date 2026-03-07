@@ -1,6 +1,6 @@
 #import "library.typ": entry, section, styling, subsection
 
-#let config = yaml("configuration.yaml")
+#let config = yaml("/configuration/configuration.yaml")
 
 #set document(author: config.contacts.name, title: "Lebenslauf" + config.contacts.name)
 #show: styling
