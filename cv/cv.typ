@@ -2,7 +2,7 @@
 
 #let config = yaml("/configuration/configuration.yaml")
 
-#set document(author: config.contacts.name, title: "Lebenslauf" + config.contacts.name)
+#set document(author: config.contacts.name, title: "Lebenslauf " + config.contacts.name)
 #show: styling
 
 // Header
@@ -25,7 +25,7 @@
   for job in config.jobs {
     entry(
       [
-        *#{ job.company }* (#{ job.role })\
+        #text(job.company, weight: 600) (#{ job.role })\
         #list(..job.description)
       ],
       [_#{ job.duration }_],
@@ -40,9 +40,9 @@
     entry(
       [
         #if education.description != "" and education.description != none [
-          *#{ education.place }* (#education.description)\
+          #text(education.place, weight: 600) (#education.description)\
         ] else [
-          *#{ education.place }*
+          #text(education.place, weight: 600)
         ]
       ],
       [_#{ education.duration }_],
@@ -61,5 +61,25 @@
   inset: (left: 0pt, top: 2pt),
   ..for skill in config.skills {
     (text(skill.name, weight: 600), skill.items.join(", "))
+  }
+)
+
+#section("Referenzen")
+#table(
+  align: left,
+  columns: (auto, 1fr),
+  stroke: none,
+  row-gutter: 10pt,
+  column-gutter: 5pt,
+  inset: (left: 0pt, top: 2pt),
+  ..for reference in config.references {
+    (
+      [#text(reference.name, weight: 600)],
+      [
+        #{ reference.role }, #{ reference.company }\
+        #link("mailto:" + reference.email, reference.email)\
+        +#reference.phone
+      ],
+    )
   }
 )

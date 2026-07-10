@@ -28,3 +28,10 @@ education:
   - place: Test
     description: Test
     duration: "2022 - 2025"
+
+references:
+  - name: Test
+    company: Test
+    role: Test
+    email: Test
+    phone: Test
