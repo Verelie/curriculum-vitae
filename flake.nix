@@ -22,6 +22,8 @@
           default = pkgs.mkShell {
             buildInputs = with pkgs; [
               typst
+              nixd
+              nixfmt
             ];
           };
         };
